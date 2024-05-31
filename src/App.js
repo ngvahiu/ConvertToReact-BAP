@@ -1,24 +1,54 @@
-import logo from './logo.svg';
 import './App.css';
+import Card from './components/Card/Card';
 
 function App() {
+  const data = [
+    {
+      title: 'Item 1',
+      description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut optio eum ullam quae officia repellendus autem reprehenderit perferendis vero error.',
+      status: 'done'
+    },
+    {
+      title: 'Item 2',
+      description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut optio eum ullam quae officia repellendus autem reprehenderit perferendis vero error.',
+      status: 'pending'
+    },
+    {
+      title: 'Item 3',
+      description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut optio eum ullam quae officia repellendus autem reprehenderit perferendis vero error.',
+      status: 'in-progress'
+    },
+    {
+      title: 'Item 4',
+      description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut optio eum ullam quae officia repellendus autem reprehenderit perferendis vero error.',
+      status: 'in-progress'
+    },
+    {
+      title: 'Item 5',
+      description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut optio eum ullam quae officia repellendus autem reprehenderit perferendis vero error.',
+      status: 'in-progress'
+    },
+    {
+      title: 'Item 6',
+      description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut optio eum ullam quae officia repellendus autem reprehenderit perferendis vero error.',
+      status: 'cancel'
+    }
+  ];
+
+  function renderCards() {
+    return data.map((item, index) => <Card title={item.title} description={item.description} status={item.status} key={index} />);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header>
+        <h2>TO DO APP UI</h2>
       </header>
-    </div>
+      <div className='wrapper'>{renderCards()}</div>
+      <footer>
+        <p>2024</p>
+      </footer>
+    </>
   );
 }
 
