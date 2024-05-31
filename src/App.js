@@ -36,7 +36,7 @@ function App() {
   ];
 
   function renderCards() {
-    return data.map((item, index) => <Card title={item.title} description={item.description} status={item.status} key={index} />);
+    return data.map((item, index) => <Card {...item} key={index} />);
   }
 
   return (
